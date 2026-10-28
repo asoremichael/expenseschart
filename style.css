@@ -1,0 +1,342 @@
+
+/* =====================================
+   1. RESET DEFAULT BROWSER STYLES
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================
+   2. COLOURS
+===================================== */
+
+:root {
+  --coral: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --pale-orange: hsl(33, 100%, 98%);
+}
+
+/* =====================================
+   3. PAGE BACKGROUND
+===================================== */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark-brown);
+}
+
+/* =====================================
+   4. MAIN CONTAINER
+===================================== */
+
+.container {
+  width: 100%;
+  max-width: 450px;
+}
+
+/* =====================================
+   5. BALANCE CARD
+===================================== */
+
+.balance-card {
+  background-color: var(--coral);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.balance-info p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.balance-info h1 {
+  font-size: 28px;
+}
+
+/* =====================================
+   6. BALANCE LOGO
+===================================== */
+
+.balance-logo {
+  display: flex;
+  align-items: center;
+}
+
+.balance-logo span {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--dark-brown);
+}
+
+.balance-logo span:first-child {
+  background-color: var(--dark-brown);
+  margin-right: -14px;
+  z-index: 1;
+}
+
+.balance-logo span:last-child {
+  background-color: transparent;
+  border-color: white;
+}
+
+/* =====================================
+   7. WHITE CHART CARD
+===================================== */
+
+.chart-card {
+  background-color: var(--pale-orange);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.chart-card > h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+/* =====================================
+   8. CHART CONTAINER
+===================================== */
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+
+  min-height: 180px;
+  margin-bottom: 24px;
+}
+
+/* =====================================
+   9. EACH DAY'S COLUMN
+===================================== */
+
+.bar-wrapper {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Container for one bar and its tooltip */
+
+.bar-area {
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* =====================================
+   10. THE ACTUAL COLOURED BARS
+===================================== */
+
+.bar {
+  display: block;
+  width: 100%;
+  max-width: 45px;
+  flex-shrink: 0;
+
+  background-color: var(--coral);
+  border-radius: 4px 4px 0 0;
+
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+/* Highlight today's bar */
+
+.bar.today {
+  background-color: var(--cyan);
+}
+
+/* Bar hover effect */
+
+.bar:hover {
+  opacity: 0.7;
+}
+
+/* =====================================
+   11. AMOUNT TOOLTIP
+===================================== */
+
+.tooltip {
+  position: absolute;
+
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--dark-brown);
+  color: white;
+
+  padding: 7px 6px;
+  border-radius: 4px;
+
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Show amount on hover */
+
+.bar-area:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =====================================
+   12. DAY LABELS
+===================================== */
+
+.day-label {
+  display: block;
+  color: var(--medium-brown);
+
+  font-size: 12px;
+  margin-top: 8px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* =====================================
+   13. DIVIDING LINE
+===================================== */
+
+.chart-card hr {
+  border: none;
+  border-top: 2px solid var(--cream);
+  margin-bottom: 24px;
+}
+
+/* =====================================
+   14. MONTHLY SUMMARY
+===================================== */
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.summary-total p {
+  color: var(--medium-brown);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.summary-total h2 {
+  font-size: 30px;
+}
+
+.summary-change {
+  text-align: right;
+  padding-bottom: 4px;
+}
+
+.summary-change p {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.summary-change span {
+  color: var(--medium-brown);
+  font-size: 12px;
+}
+
+/* =====================================
+   15. FOOTER
+===================================== */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.attribution a {
+  color: var(--dark-brown);
+}
+
+/* =====================================
+   16. MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 400px) {
+  body {
+    padding: 16px;
+  }
+
+  .balance-card {
+    padding: 20px;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .chart-card > h2 {
+    font-size: 21px;
+    margin-bottom: 28px;
+  }
+
+  .chart {
+    gap: 5px;
+    min-height: 170px;
+  }
+
+  .bar {
+    max-width: 38px;
+  }
+
+  .day-label {
+    font-size: 10px;
+  }
+
+  .summary-total h2 {
+    font-size: 25px;
+  }
+
+  .summary-total p {
+    font-size: 12px;
+  }
+
+  .summary-change span {
+    font-size: 10px;
+  }
+}

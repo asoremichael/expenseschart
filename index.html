@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frontend Mentor | Expenses Chart Component</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- Balance card -->
+    <section class="balance-card">
+      <div class="balance-info">
+        <p>My balance</p>
+        <h1>$921.48</h1>
+      </div>
+
+      <div class="balance-logo" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Spending chart and monthly summary -->
+    <section class="chart-card">
+
+      <h2>Spending - Last 7 days</h2>
+
+      <!-- JavaScript will create the seven bars here -->
+      <div class="chart" id="chart" aria-label="Daily spending chart">
+      </div>
+
+      <hr>
+
+      <!-- Monthly summary -->
+      <div class="summary">
+
+        <div class="summary-total">
+          <p>Total this month</p>
+          <h2>$478.33</h2>
+        </div>
+
+        <div class="summary-change">
+          <p>+2.4%</p>
+          <span>from last month</span>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge"
+       target="_blank" rel="noopener noreferrer">
+      Frontend Mentor
+    </a>.
+    Coded by <a href="#">Asore Michael</a>.
+  </footer>
+
+</body>
+</html>
